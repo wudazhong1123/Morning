@@ -38,10 +38,11 @@ public class PushUtils {
 		wxMpService.setWxMpConfigStorage(wxStorage);
 		//2,推送消息
 		WxMpTemplateMessage templateMessage = WxMpTemplateMessage.builder()
-		                                                         //.toUser("oQq-K5o9IemNPxR1kNM13vUef_QM")
-		                                                         .toUser("oQq-K5lKG3q9x-CGa5HkBIUCxccc")
+		                                                         .toUser("oQq-K5o9IemNPxR1kNM13vUef_QM")
+		                                                         //.toUser("oQq-K5lKG3q9x-CGa5HkBIUCxccc")
+		                                                         //.toUser("oQq-K5nNjr32Gz99JIUugfoi743Q")
 		                                                         .templateId(
-				                                                         "xAQk_7c72xESAvmxWCINTL_s281jwSdiESNmMO3gaXw")
+				                                                         "eCWBB4Rdhxc5mp1Y38Xb9peKnNyN4wDnIcRAgQQz0bc")
 		                                                         .build();
 		//3,如果是正式版发送模版消息，这里需要配置你的信息
 		//todo 获取当前位置信息
@@ -51,7 +52,7 @@ public class PushUtils {
 		templateMessage.addData(new WxMpTemplateData("riqi", weather.getDate() + "  " + weather.getWeek(), "#00BFFF"));
 		// 今天
 		// 白天天气
-		templateMessage.addData(new WxMpTemplateData("tianqi", weather.getText_now(), "#00FFFF"));
+		templateMessage.addData(new WxMpTemplateData("tianqi", weather.getText_now(), "#B95EA3"));
 		// 温度
 		templateMessage.addData(new WxMpTemplateData("high", weather.getHigh() + "", "#FF6347"));
 		templateMessage.addData(new WxMpTemplateData("low", weather.getLow() + "", "#173177"));
@@ -59,6 +60,15 @@ public class PushUtils {
 		// 风向风级
 		templateMessage.addData(new WxMpTemplateData("winddir", weather.getWind_dir() + "", "#B95EA3"));
 		templateMessage.addData(new WxMpTemplateData("windclass", weather.getWind_class() + "", "#42B857"));
+		// 明天
+		// 白天天气
+		templateMessage.addData(new WxMpTemplateData("tianqi1", weather.getText_now1(), "#B95EA3"));
+		// 温度
+		templateMessage.addData(new WxMpTemplateData("high1", weather.getHigh1() + "", "#FF6347"));
+		templateMessage.addData(new WxMpTemplateData("low1", weather.getLow1() + "", "#173177"));
+		// 风向风级
+		templateMessage.addData(new WxMpTemplateData("winddir1", weather.getWind_dir1() + "", "#B95EA3"));
+		templateMessage.addData(new WxMpTemplateData("windclass1", weather.getWind_class1() + "", "#42B857"));
 		// 倒计时
 		templateMessage.addData(new WxMpTemplateData("lianai", DateUtils.getLianAi() + "", "#FF1493"));
 		templateMessage.addData(new WxMpTemplateData("shengri1", DateUtils.getZXJBirthday() + "", "#FFA500"));
