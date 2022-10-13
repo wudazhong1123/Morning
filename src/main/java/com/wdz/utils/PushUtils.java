@@ -83,10 +83,10 @@ public class PushUtils {
 			beizhu = "今天是恋爱" + (DateUtils.getLianAi() / 365) + "周年纪念日！";
 		}
 		if (DateUtils.getZXJBirthday() == 0) {
-			beizhu = "生日快乐🎉";
+			beizhu = "生日快乐🎉🎉🎉";
 		}
 		if (DateUtils.getWDZBirthday() == 0) {
-			beizhu = "今天是谁生日呀";
+			beizhu = "今天是谁生日呀哈哈哈哈哈";
 		}
 		templateMessage.addData(new WxMpTemplateData("beizhu", beizhu, "#FF0000"));
 		

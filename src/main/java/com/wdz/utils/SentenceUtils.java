@@ -22,10 +22,9 @@ import java.util.Map;
 public class SentenceUtils {
 	public static String getCaiHongPi() {
 		String httpUrl = "http://api.tianapi.com/caihongpi/index?key=e296b776a880ac07468d137643468544";
-		BufferedReader reader = null;
+		BufferedReader reader;
 		String result = null;
 		StringBuilder sbf = new StringBuilder();
-		
 		try {
 			URL url = new URL(httpUrl);
 			HttpURLConnection connection = (HttpURLConnection) url
